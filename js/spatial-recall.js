@@ -1,5 +1,5 @@
 // MAIN EXPERIMENT SET UP VARIABLES
-var sr_trials_per_block = 10
+var sr_trials_per_epoch = 10
 var sr_practice_trial_num = 4
 
 
@@ -82,12 +82,12 @@ var sr_recall_forwards_practice = {
   timeline_variables: getGridParams(sr_practice_trial_num,consistent_tile_duration,false)
 }
 
-// MAIN EXPERIMENT GET BLOCK TRIALS FUNCTION
+// MAIN EXPERIMENT GET EPOCH TRIALS FUNCTION
 function sr_getBlock() {
-  var timeline_sr_block = []
-  var proportion_per_trial = 1 / sr_trials_per_block
+  var timeline_sr_epoch = []
+  var proportion_per_trial = 1 / sr_trials_per_epoch
 
-  for (i=0; i < sr_trials_per_block; i++){
+  for (i=0; i < sr_trials_per_epoch; i++){
     var screenCheck={
       type: jsPsychScreenCheck,
       min_width: 258,
@@ -120,9 +120,9 @@ function sr_getBlock() {
       }
     }
 
-    //timeline_sr_block.push(screenCheck,response_key,recall_sr)
-    timeline_sr_block.push(screenCheck,recall_sr)
+    //timeline_sr_epoch.push(screenCheck,response_key,recall_sr)
+    timeline_sr_epoch.push(screenCheck,recall_sr)
   }
 
-  return timeline_sr_block
+  return timeline_sr_epoch
 }

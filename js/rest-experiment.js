@@ -1,8 +1,8 @@
 // MAIN EXPERIMENT SET UP VARIABLES
-var max_num_rest_trials_per_block = 20; // before it was 20; make it 30?
+var max_num_rest_trials_per_epoch = 20;
 var rest_num_practice_trials = 4;
-var num_groups = 10
-var num_blocks_per_group = 3
+var num_blocks = 10
+var num_epochs_per_block = 3
 var bonus_minimum = 1
 var dependent_bonus = 2
 
@@ -23,7 +23,7 @@ const rt_instructions_01 = {
 
 // REST BREAK INSTRUCTIONS
 var rest_ended = false;
-var overall_rest_left = num_groups * num_blocks_per_group * max_num_rest_trials_per_block
+var overall_rest_left = num_blocks * num_epochs_per_block * max_num_rest_trials_per_epoch
 var num_rest_used = 0
 
 function getNumRestUsed() {
@@ -36,7 +36,7 @@ function shouldTrialRun() {
   return !rest_ended
 }
 
-function rest_task_createTrials(num_rt_trials, follows_group_num,follows_internal_block_num, type_desc) {
+function rest_task_createTrials(num_rt_trials, follows_block_num,follows_internal_epoch_num, type_desc) {
   const shapes = ['Circle', 'Square'];
   const trials = [];
 
@@ -56,8 +56,8 @@ function rest_task_createTrials(num_rt_trials, follows_group_num,follows_interna
             option_to_end: true, //whether the end rest button is visible
             rest_trial_num: rest_trial_number,
             overall_num_rest_used: getNumRestUsed(),
-            follows_group_num: follows_group_num,
-            follows_internal_block_num: follows_internal_block_num,
+            follows_block_num: follows_block_num,
+            follows_internal_epoch_num: follows_internal_epoch_num,
             type_desc: type_desc
           },
           on_finish: function(data) {
@@ -100,7 +100,7 @@ function getPropRestUsed(default_bonus,bonus_max) {
   console.log("calculating bonus: num used, num possible")
   var num_used = num_rest_used
   console.log(num_used)
-  var num_possible = num_groups * num_blocks_per_group * max_num_rest_trials_per_block
+  var num_possible = num_blocks * num_epochs_per_block * max_num_rest_trials_per_epoch
   console.log(num_possible)
   var final_bonus = bonus_max * (1 - num_used/num_possible) + default_bonus
   console.log(final_bonus)
@@ -161,9 +161,9 @@ var rest_to_game_transition= {
   }
 
 // Create self-paced rest timeline
-function createSelfPacedRestTimeline(cue,follows_group_num,follows_internal_block_num, type_desc) {
+function createSelfPacedRestTimeline(cue,follows_block_num,follows_internal_epoch_num, type_desc) {
   var cue_timeline = cue === "switch" ? cue_switch : cue_stay;
-  var rest_timeline = rest_task_createTrials(max_num_rest_trials_per_block, follows_group_num = follows_group_num, follows_internal_block_num = follows_internal_block_num, type_desc = type_desc);
+  var rest_timeline = rest_task_createTrials(max_num_rest_trials_per_epoch, follows_block_num = follows_block_num, follows_internal_epoch_num = follows_internal_epoch_num, type_desc = type_desc);
   
   var self_paced_rest_procedure = {
     timeline: rest_timeline,

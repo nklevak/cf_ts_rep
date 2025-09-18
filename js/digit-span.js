@@ -1,5 +1,5 @@
 // MAIN EXPERIMENT SET UP VARIABLES
-var ds_trials_per_block = 10
+var ds_trials_per_epoch = 10
 var ds_practice_trial_num = 4
 var response_time_max = 4200 // in ms
 
@@ -131,7 +131,7 @@ function createResponsePhase(sequence, is_practice) {
     };
 }
 
-function ds_getMainBlock(num_trials = ds_trials_per_block, num_d = ds_digits_to_mem) {
+function ds_getMainBlock(num_trials = ds_trials_per_epoch, num_d = ds_digits_to_mem) {
     var trials = [];
 
     for (let i = 0; i < num_trials; i++) {

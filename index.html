@@ -164,56 +164,56 @@
   
   // MAIN EXPERIMENT TASKS:
   // ABABBABAAB
-  // each A group is: A, rest, A, rest, A
-  // each B group is: B, rest, B, rest, B
-  // 10 blocks in total
+  // each A block is: A epoch, rest, A epoch, rest, A epoch
+  // each B block is: B epoch, rest, B epoch, rest, B epoch
+  // 10 blocks in total, 3 epochs per block
   
   // create rest timelines
   //var rest_stay = createSelfPacedRestTimeline("stay")
   //var rest_switch = createSelfPacedRestTimeline("switch")
   
-  // create A and B main blocks
-  var sr_block_trials = {
+  // create A and B main epochs
+  var sr_epoch_trials = {
     timeline: sr_getBlock()
   }
-  var sr_group = {
-    timeline: [sr_block_trials, 
-    createSelfPacedRestTimeline("stay", follows_group_num = null, follows_internal_block_num = 1, type_desc="block_same_same"), 
-    sr_block_trials, 
-    createSelfPacedRestTimeline("stay", follows_group_num = null, follows_internal_block_num = 2, type_desc="block_same_same"), 
-    sr_block_trials]
+  var sr_block = {
+    timeline: [sr_epoch_trials, 
+    createSelfPacedRestTimeline("stay", follows_block_num = null, follows_internal_epoch_num = 1, type_desc="epoch_same_same"), 
+    sr_epoch_trials, 
+    createSelfPacedRestTimeline("stay", follows_block_num = null, follows_internal_epoch_num = 2, type_desc="epoch_same_same"), 
+    sr_epoch_trials]
   }
-  //var ds_block_trials = {
-  //  timeline: ds_getBlock(ds_trials_per_block, ds_digits_to_mem)
+  //var ds_epoch_trials = {
+  //  timeline: ds_getBlock(ds_trials_per_epoch, ds_digits_to_mem)
   //}
-  var ds_group = {
-    timeline: [ds_getBlock(ds_trials_per_block, ds_digits_to_mem), 
-    createSelfPacedRestTimeline("stay", follows_group_num = null, follows_internal_block_num = 1, type_desc="block_same_same"), 
-    ds_getBlock(ds_trials_per_block, ds_digits_to_mem), 
-    createSelfPacedRestTimeline("stay", follows_group_num = null, follows_internal_block_num = 2, type_desc="block_same_same"), 
-    ds_getBlock(ds_trials_per_block, ds_digits_to_mem)]
+  var ds_block = {
+    timeline: [ds_getBlock(ds_trials_per_epoch, ds_digits_to_mem), 
+    createSelfPacedRestTimeline("stay", follows_block_num = null, follows_internal_epoch_num = 1, type_desc="epoch_same_same"), 
+    ds_getBlock(ds_trials_per_epoch, ds_digits_to_mem), 
+    createSelfPacedRestTimeline("stay", follows_block_num = null, follows_internal_epoch_num = 2, type_desc="epoch_same_same"), 
+    ds_getBlock(ds_trials_per_epoch, ds_digits_to_mem)]
   }
   
   // assign A and B main blocks
-  var A_block_group = sr_group
-  var B_block_group = ds_group
+  var A_block = sr_block
+  var B_block = ds_block
   if (gameA_SR == 0) {// this means game A is actually digit span
-    A_block_group = ds_group
-    B_block_group = sr_group
+    A_block = ds_block
+    B_block = sr_block
   }
   
   //NEW ORDER: ABABBABAAB
   timeline.push(
-    A_block_group, createSelfPacedRestTimeline("switch", follows_group_num=1, follows_internal_block_num = 3, type_desc="group_A_B"), 
-    B_block_group, createSelfPacedRestTimeline("switch", follows_group_num=2, follows_internal_block_num = 3, type_desc="group_B_A"), 
-    A_block_group, createSelfPacedRestTimeline("switch", follows_group_num=3, follows_internal_block_num = 3, type_desc="group_A_B"), 
-    B_block_group, createSelfPacedRestTimeline("stay", follows_group_num=4, follows_internal_block_num = 3, type_desc="group_B_B"), 
-    B_block_group, createSelfPacedRestTimeline("switch", follows_group_num=5, follows_internal_block_num = 6, type_desc="group_B_A"), 
-    A_block_group, createSelfPacedRestTimeline("switch", follows_group_num=6, follows_internal_block_num = 3, type_desc="group_A_B"),
-    B_block_group, createSelfPacedRestTimeline("switch", follows_group_num=7, follows_internal_block_num = 3, type_desc="group_B_A"), 
-    A_block_group, createSelfPacedRestTimeline("stay", follows_group_num=8, follows_internal_block_num = 3, type_desc="group_A_A"),
-    A_block_group, createSelfPacedRestTimeline("switch", follows_group_num=9, follows_internal_block_num = 6, type_desc="group_A_B"), 
-    B_block_group, createSelfPacedRestTimeline("switch", follows_group_num=10, follows_internal_block_num = 3, type_desc="group_B_A")
+    A_block, createSelfPacedRestTimeline("switch", follows_block_num=1, follows_internal_epoch_num = 3, type_desc="block_A_B"), 
+    B_block, createSelfPacedRestTimeline("switch", follows_block_num=2, follows_internal_epoch_num = 3, type_desc="block_B_A"), 
+    A_block, createSelfPacedRestTimeline("switch", follows_block_num=3, follows_internal_epoch_num = 3, type_desc="block_A_B"), 
+    B_block, createSelfPacedRestTimeline("stay", follows_block_num=4, follows_internal_epoch_num = 3, type_desc="block_B_B"), 
+    B_block, createSelfPacedRestTimeline("switch", follows_block_num=5, follows_internal_epoch_num = 6, type_desc="block_B_A"), 
+    A_block, createSelfPacedRestTimeline("switch", follows_block_num=6, follows_internal_epoch_num = 3, type_desc="block_A_B"),
+    B_block, createSelfPacedRestTimeline("switch", follows_block_num=7, follows_internal_epoch_num = 3, type_desc="block_B_A"), 
+    A_block, createSelfPacedRestTimeline("stay", follows_block_num=8, follows_internal_epoch_num = 3, type_desc="block_A_A"),
+    A_block, createSelfPacedRestTimeline("switch", follows_block_num=9, follows_internal_epoch_num = 6, type_desc="block_A_B"), 
+    B_block, createSelfPacedRestTimeline("switch", follows_block_num=10, follows_internal_epoch_num = 3, type_desc="block_B_A")
   )
     
   var overall_debrief = {
