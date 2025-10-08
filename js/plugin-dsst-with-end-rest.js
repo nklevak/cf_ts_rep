@@ -23,7 +23,7 @@ var dsstWithEndRestPlugin = (function (jspsych) {
       },
       clear_duration: {
         type: jspsych.ParameterType.INT,
-        default: 150,
+        default: 175, // was 150 in the original experiment
       },
       trial_duration: {
         type: jspsych.ParameterType.INT,

@@ -137,7 +137,7 @@ var cue_switch = {
       <h2 style="font-size: 28px; margin-bottom: 20px;"><strong>Important Notice</strong></h2>
       <p class="instructions-text" style="font-size: 24px;">
         After rest:<br><br>
-        <strong style="font-size: 48px; padding: 10px;">
+        <strong style="font-size: 40px; padding: 10px;">
           You will SWITCH to the OTHER game
         </strong>
       </p>
@@ -157,7 +157,7 @@ var rest_to_game_transition= {
     <p class="instructions-text">You are done with rest! <br>You will now return to the games.</p>
   </div>`,
   choices: "NO_KEYS",
-  trial_duration: 1000,
+  trial_duration: 1500,
   }
 
 // Create self-paced rest timeline

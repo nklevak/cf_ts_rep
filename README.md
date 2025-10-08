@@ -44,44 +44,46 @@ Current ordering: ABABBABAAB (5 As and 5 Bs)
 2. Spatial Recall Task
   - epoch in main experiment (10 trials):
     - initial stimulus (empty grid): 100 ms
-    - Sequence Presentation: 1.9 seconds (4 squares × (275ms display + 200ms gap))
+    - Sequence Presentation: 2.06 seconds (4 squares × (315ms display + 200ms gap))
     - Response Window: 4.2 seconds maximum
-    - *Total per Epoch*: 62 seconds maximum (10 × (2.0s + 4.2s))
+    - *Total per Epoch*: 62.6 seconds maximum (10 × (2.06s + 4.2s))
   - practice epoch (4 trials):
-    - 28.8s maximum (4 x (0.1 + 1.9 + 4.2 + 1 (from feedback)))
+    - 29.44s maximum (4 x (0.1 + 2.06 + 4.2 + 1 (from feedback)))
 3. SPR task
-  - *single trial*: 1.5 seconds (1350ms display + 150ms clear screen)
+  - *single trial*: 1.525 seconds (1350ms display + 175ms clear screen)
   - Practice block:
-    - 10s (4 trials x (1.5s + 1s feedback))
+    - 10.1s (4 trials x (1.525s + 1s feedback))
   - Rest of experiment:
-    - *length of all rest trials together*: 900s (30 epochs * 20 rest trials * 1.5s)
+    - *length of all rest trials together*: 915s (30 epochs * 20 rest trials * 1.525s)
 
 ## Total Time Breakdown
 
 **Active Task Time**
 1. Main Experimental Epochs
-   - Spatial Recall: 930 seconds (15 epochs × 62s)
+   - Spatial Recall: 939 seconds (15 epochs × 62.6s)
    - Digit Span: 915 seconds (15 epochs × 61s)
 2. Practice Epochs
-   - Spatial Recall: 28.8 seconds
+   - Spatial Recall: 29.44 seconds
    - Digit Span: 28.4 seconds
-   - Rest Task: 10 seconds
+   - Rest Task: 10.1 seconds
 3. Additional Components
-- SPR trials: 900 seconds
+- SPR trials: 915 seconds
 - Transition Cues: 90 seconds (30 cues (a transition after each epoch) × 3s)
+- Rest-to-Game Transitions: 8 seconds (16 transitions × 0.5s additional duration)
 - Instructions/Debrief: 240 seconds
 
 **Final Calculation**
-900s (rests) +
+915s (rests) +
 90s (cues) +
-10s (rest practice) +
-28.8s (SR practice) +
+8s (rest-to-game transitions) +
+10.1s (rest practice) +
+29.44s (SR practice) +
 28.4s (DS practice) +
-930s (SR epochs) +
+939s (SR epochs) +
 915s (DS epochs) +
 240s (instructions)
-= 3142.2 seconds
-= 52.37 minutes
+= 3174.94 seconds
+= 52.92 minutes
 (in case instructions/survey take a long time, round up to 56 minutes)
 
 ## Bonus Structure

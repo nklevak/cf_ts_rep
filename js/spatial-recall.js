@@ -10,10 +10,7 @@ var digits_to_mem = 4
 
 ///////////////////////////////////////////////////////////////
 ////// SET UP GRID DIFFICULTY TO BE MAX_TILE_DURATION & CREATE num_trials TRIALS
-// this function sets up the timing of each trial. 
-// IF CHANGE_DIFFICULTY = TRUE: It will start with the max duration for the first group of 5. Then for every subsequent group it will sample from prev_group - 100 +/- 50.
-// IF CHANGE_DIFFICULTY = FALSE (default): it will give every trial the given max_tile_duration
-function getGridParams(num_trials,max_tile_duration,change_difficulty=false) {
+function getGridParams(num_trials,max_tile_duration) {
   // Initialize an array to hold the duration of each trial
   var trialDurations = [];
 
@@ -40,12 +37,6 @@ var sr_recall_forwards_practice = {
       min_width: 258,
       min_height: 364
     },
-//    {
-//      type: jsPsychHtmlKeyboardResponse,
-//      stimulus: '<p style="font-size: 48px;">+</p>',
-//      choices: 'NO_KEYS',
-//      trial_duration: 400,
-//    },
     {
       type: jsPsychSpatialRecall,
       grid_size: grid_size_constant,
@@ -94,13 +85,6 @@ function sr_getBlock() {
       min_height: 364
     }
   
-    //var response_key = {
-    //  type: jsPsychHtmlKeyboardResponse,
-    //  stimulus: '<p style="font-size: 48px;">+</p>',
-    //  choices: 'NO_KEYS',
-    //  trial_duration: 400,
-    //}
-  
     var recall_sr = {
       type: jsPsychSpatialRecall,
       grid_size: grid_size_constant,
@@ -120,7 +104,6 @@ function sr_getBlock() {
       }
     }
 
-    //timeline_sr_epoch.push(screenCheck,response_key,recall_sr)
     timeline_sr_epoch.push(screenCheck,recall_sr)
   }
 
