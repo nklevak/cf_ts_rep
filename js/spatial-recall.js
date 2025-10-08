@@ -4,7 +4,7 @@ var sr_practice_trial_num = 4
 
 
 // SR specific set up variables:
-var consistent_tile_duration = 275
+var consistent_tile_duration = 315 // was 275 in the original experiment
 var grid_size_constant = 4
 var digits_to_mem = 4
 
