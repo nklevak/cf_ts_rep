@@ -1,6 +1,6 @@
 // MAIN EXPERIMENT SET UP VARIABLES
 // var ds_trials_per_epoch = 10
-var ds_trials_per_epoch = 3 // TEMPORARY CHANGE FOR TESTING PROLIFERATE
+var ds_trials_per_epoch = 2 // TEMPORARY CHANGE FOR TESTING PROLIFERATE shoudl be 12
 var ds_practice_trial_num = 4
 var response_time_max = 4200 // in ms
 
