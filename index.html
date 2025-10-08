@@ -6,6 +6,10 @@
   <!-- Load libraries -->
   <script src="https://unpkg.com/jspsych@7.3.3"></script>
 
+  <!-- Proliferate library and jquery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://proliferate.alps.science/static/js/proliferate.js" type="text/javascript"></script>
+
   <!-- Initialize jsPsych -->
   <script src="./js/init-jspsych.js"></script>
 
@@ -139,25 +143,22 @@
   };
   
   // consent form
-  // preload this later on cognition.run (right now it doesn't work because of access issues)
-  //var consent_form = {
-  //  type: jsPsychExternalHtml,
-  //  url: "poldrack_consent_form.html",
-  //  cont_btn: "start",
-  //  on_finish: function(data){
-  //    data.gameA_name = gameA
-  //    data.gameB_name = gameB
-  //    data.gameA_isSR = gameA_SR
-  //  }
-  //};
+  var consent_form = {
+    type: jsPsychExternalHtml,
+    url: "poldrack_consent_form.html",
+    cont_btn: "start",
+    on_finish: function(data){
+      data.gameA_name = gameA
+      data.gameB_name = gameB
+      data.gameA_isSR = gameA_SR
+    }
+  };
   
   // INITIALIZE TIMELINE
   var timeline = [];
   
   // INTRUCTIONS AND PRACTICE SESSION
-  
-  timeline.push(preload,fullscreen, prolific_id_insert,welcome_practice_instructions)
-  //timeline.push(preload,fullscreen,consent_form,prolific_id_insert,welcome_practice_instructions)
+  timeline.push(preload,fullscreen,consent_form,prolific_id_insert,welcome_practice_instructions)
   
   // A and B and rest practice
   timeline.push(gameA_practice_instructions, gameA_practice, practice_transition, gameB_practice_instructions, gameB_practice, rest_practice_instructions, rt_practice, main_exp_instructions)
@@ -167,10 +168,6 @@
   // each A block is: A epoch, rest, A epoch, rest, A epoch
   // each B block is: B epoch, rest, B epoch, rest, B epoch
   // 10 blocks in total, 3 epochs per block
-  
-  // create rest timelines
-  //var rest_stay = createSelfPacedRestTimeline("stay")
-  //var rest_switch = createSelfPacedRestTimeline("switch")
   
   // create A and B main epochs
   var sr_epoch_trials = {
@@ -242,9 +239,10 @@
     preamble: `<p>Great work! We will now do a short debrief. <br><br> In this experiment you were asked to end the rest whenever you wanted.</p>`,
     questions: [
       {prompt: 'How did you decide how when to end the rest trials?', rows: 5,name: 'rest_decision'},
-      {prompt: 'Did you take which game will happen next into consideration?', rows: 5,name: 'cue_read'},
+      {prompt: 'Did you read the switch/stay notifcation and take which game will happen next into consideration?', rows: 5,name: 'cue_read'},
       {prompt: 'Did your strategy change over time?', rows: 5,name: 'rest_strategy'},
       {prompt: 'Were you trying to conserve endowment points?', rows: 5,name: 'rest_conserve'},
+      {prompt: 'Do you have any other feedback or comments?', rows: 5,name: 'rest_conserve'},
     ]
   }
   
