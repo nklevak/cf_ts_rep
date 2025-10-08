@@ -17,6 +17,6 @@ var jsPsych = initJsPsych({
   on_finish: function(){
     var experimentData = jsPsych.data.get().json();
     proliferate.submit(experimentData)
-    window.location = "https://app.prolific.com/submissions/complete?cc=CEAKMHC3"
+    // window.location = "https://app.prolific.com/submissions/complete?cc=CEAKMHC3"
   }
 });
