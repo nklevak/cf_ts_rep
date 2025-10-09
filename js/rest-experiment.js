@@ -1,7 +1,7 @@
 // MAIN EXPERIMENT SET UP VARIABLES
 // var max_num_rest_trials_per_epoch = 20;
-var max_num_rest_trials_per_epoch = 3; // TEMPORARY CHANGE FOR TESTING PROLIFERATE should be 20
-var rest_num_practice_trials = 4;
+var max_num_rest_trials_per_epoch = 2; // TEMPORARY CHANGE FOR TESTING PROLIFERATE should be 20
+var rest_num_practice_trials = 1;
 var num_blocks = 10
 var num_epochs_per_block = 3
 var bonus_minimum = 1

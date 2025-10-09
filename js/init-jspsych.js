@@ -15,8 +15,14 @@ var jsPsych = initJsPsych({
     //document.getElementById("jspsych-progressbar-container").style.visibility = "hidden";
   },
   on_finish: function(){
-    var experimentData = jsPsych.data.get().json();
-    proliferate.submit(experimentData)
+    // var experimentData = jsPsych.data.get().json();
+    // proliferate.submit(experimentData)
     // window.location = "https://app.prolific.com/submissions/complete?cc=CEAKMHC3"
+
+    // Add interactions to the data variable
+    var interaction_data = jsPsych.data.getInteractionData();
+    jsPsych.data.get().addToLast({interactions: interaction_data.json()});
+    // Submit to proliferate (uncomment to use)
+    proliferate.submit({data: jsPsych.data.get().values()});
   }
 });
