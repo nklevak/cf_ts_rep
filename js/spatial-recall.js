@@ -61,10 +61,6 @@ var sr_recall_forwards_practice = {
         }
       },
       choices: 'NO_KEYS',
-      on_start: function(){
-//        var update_to = jsPsych.getProgressBarCompleted() + sr_practice_prop_added
-//        jsPsych.setProgressBar(update_to);
-      },
       on_finish: function(data){
         data.trial_type = "sr_practice_feedback"
       }
@@ -98,9 +94,6 @@ function sr_getBlock() {
         data.practice = "false"
         data.game_type = "spatial_recall"
         data.trial_type = "sr_main_response"
-
-        //var progressbar_update = jsPsych.getProgressBarCompleted() + proportion_per_trial
-        //jsPsych.setProgressBar(progressbar_update);
       }
     }
 

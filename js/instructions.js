@@ -91,25 +91,19 @@ stimulus: `<div class="instructions-container">
   <p class="instructions-text">Great work! You will now practice for <b>Game B</b>. Press any key to continue.</p>
 </div>`,
 choices: "ALL_KEYS",
-on_start: function(){
-  document.getElementById("jspsych-progressbar-container").style.visibility = "hidden";
-},
 trial_duration: 5000,
 }
 
 // rest task practice instructions and transition
 var rest_practice_instructions = {
-type: jsPsychInstructions,
-pages: rest_practice,
-key_forward: 'ArrowRight',
-key_backward: 'ArrowLeft',
-allow_keys: true,
-show_clickable_nav: true,
-button_label_previous: 'Prev',
-button_label_next: 'Next',
-on_finish: function(){
-  // document.getElementById("jspsych-progressbar-container").style.visibility = "hidden";
-}
+  type: jsPsychInstructions,
+  pages: rest_practice,
+  key_forward: 'ArrowRight',
+  key_backward: 'ArrowLeft',
+  allow_keys: true,
+  show_clickable_nav: true,
+  button_label_previous: 'Prev',
+  button_label_next: 'Next',
 }
 
 // POST PRACTICE INSTRUCTIONS
@@ -154,15 +148,14 @@ var main_exp_instructions = {
       <p class="instructions-text">Re-read the instructions if necessary, and press continue when you are ready to begin the main experiment!</p>
     </div>`
   ],
-key_forward: 'ArrowRight',
-key_backward: 'ArrowLeft',
-allow_keys: true,
-show_clickable_nav: true,
-button_label_previous: 'Prev',
-button_label_next: 'Next',
-on_start: function(){
-document.getElementById("jspsych-progressbar-container").style.visibility = "hidden";
-}
+  key_forward: 'ArrowRight',
+  key_backward: 'ArrowLeft',
+  allow_keys: true,
+  show_clickable_nav: true,
+  button_label_previous: 'Prev',
+  button_label_next: 'Next',
+  on_start: function(){
+  }
 }
 
 var exitFullscreen = {
