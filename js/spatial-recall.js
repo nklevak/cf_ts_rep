@@ -1,7 +1,6 @@
 // MAIN EXPERIMENT SET UP VARIABLES
-// var sr_trials_per_epoch = 10
-var sr_trials_per_epoch = 1 // TEMPORARY CHANGE FOR TESTING PROLIFERATE should be 10
-var sr_practice_trial_num = 1 // TEMPORARY CHANGE FOR TESTING PROLIFERATE should be 4
+var sr_trials_per_epoch = 10
+var sr_practice_trial_num = 4 
 
 
 // SR specific set up variables:

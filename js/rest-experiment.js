@@ -1,7 +1,6 @@
 // MAIN EXPERIMENT SET UP VARIABLES
-// var max_num_rest_trials_per_epoch = 20;
-var max_num_rest_trials_per_epoch = 2; // TEMPORARY CHANGE FOR TESTING PROLIFERATE should be 20
-var rest_num_practice_trials = 1;
+var max_num_rest_trials_per_epoch = 20;
+var rest_num_practice_trials = 4;
 var num_blocks = 10
 var num_epochs_per_block = 3
 var bonus_minimum = 1
@@ -113,10 +112,9 @@ var cue_stay = {
   type: jsPsychHtmlKeyboardResponse,
   stimulus: `
     <div class="instructions-container" style="text-align: center;">
-      <h2 style="font-size: 28px; margin-bottom: 20px;"><strong>Important Notice</strong></h2>
+      <h2 style="font-size: 22px; margin-bottom: 20px;">After this rest period:</h2><br><br>
       <p class="instructions-text" style="font-size: 24px;">
-        After rest:<br><br>
-        <strong style="font-size: 48px; padding: 10px;">
+        <strong style="font-size: 40px; padding: 10px;">
           You will STAY with the SAME game
         </strong>
       </p>
@@ -135,9 +133,8 @@ var cue_switch = {
   type: jsPsychHtmlKeyboardResponse,
   stimulus: `
     <div class="instructions-container" style="text-align: center;">
-      <h2 style="font-size: 28px; margin-bottom: 20px;"><strong>Important Notice</strong></h2>
+      <h2 style="font-size: 28px; margin-bottom: 20px;"><strong>After this rest period:</strong></h2><br><br>
       <p class="instructions-text" style="font-size: 24px;">
-        After rest:<br><br>
         <strong style="font-size: 40px; padding: 10px;">
           You will SWITCH to the OTHER game
         </strong>

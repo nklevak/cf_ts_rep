@@ -24,7 +24,7 @@ Current ordering: ABABBABAAB (5 As and 5 Bs)
 ### Task Parameters
 - Digits to memorize in Digit Span: 4
 - Squares to memorize in Spatial Recall (within a 4x4 grid): 4
-- Rest Trial Length: 1.5 seconds
+- Rest Trial Length: 1.525 seconds
 - Maximum Response Time: 4.2 seconds (both games)
 - Transition Cue Duration: 3 seconds
 

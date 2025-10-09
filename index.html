@@ -111,8 +111,6 @@
     on_finish: function(data){
       data.game_A = gameA
       data.game_B = gameB
-      //document.getElementById("jspsych-progressbar-container").style.visibility = "visible";
-      //jsPsych.setProgressBar(0);
     }
   }
   
@@ -126,8 +124,6 @@
     button_label_previous: 'Prev',
     button_label_next: 'Next',
     on_finish: function(){
-      //document.getElementById("jspsych-progressbar-container").style.visibility = "visible";
-      //jsPsych.setProgressBar(0);
     }
   }
   
@@ -238,11 +234,11 @@
     type: jsPsychSurveyText,
     preamble: `<p>Great work! We will now do a short debrief. <br><br> In this experiment you were asked to end the rest whenever you wanted.</p>`,
     questions: [
-      {prompt: 'How did you decide how when to end the rest trials?', rows: 5,name: 'rest_decision'},
-      {prompt: 'Did you read the switch/stay notifcation and take which game will happen next into consideration?', rows: 5,name: 'cue_read'},
-      {prompt: 'Did your strategy change over time?', rows: 5,name: 'rest_strategy'},
-      {prompt: 'Were you trying to conserve endowment points?', rows: 5,name: 'rest_conserve'},
-      {prompt: 'Do you have any other feedback or comments?', rows: 5,name: 'gen_feedback'},
+      {prompt: 'How did you decide how when to end the rest trials?', rows: 3,name: 'rest_decision'},
+      {prompt: 'Did you read the switch/stay notifcation and take which game will happen next into consideration?', rows: 3,name: 'cue_read'},
+      {prompt: 'Did your strategy change over time?', rows: 3,name: 'rest_strategy'},
+      {prompt: 'Were you trying to conserve endowment points?', rows: 3,name: 'rest_conserve'},
+      {prompt: 'Do you have any other feedback or comments?', rows: 3,name: 'gen_feedback'},
     ]
   }
   

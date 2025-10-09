@@ -68,7 +68,7 @@ rest_practice = [
   <p class="instructions-text">You have completed the practice for the two main games, Game A and Game B!</p>
   <p class="instructions-text">Now, you will practice the <strong>rest game</strong>, which will be shown to you during rest breaks.</p>
   <p class="instructions-text">Unlike Game A and Game B, do not worry about getting everything correct in the Rest Game. \
-  As long as make an attempt to answer most of the trials, you will get credit.</p>
+  As long as make an attempt to correctly answer most of the trials, you will get credit.</p>
 </div>`,
 `<div class="instructions-container">
   <p class="instructions-text">In this game, you will see two shapes with numbers underneath them. \
@@ -108,8 +108,7 @@ show_clickable_nav: true,
 button_label_previous: 'Prev',
 button_label_next: 'Next',
 on_finish: function(){
-  document.getElementById("jspsych-progressbar-container").style.visibility = "hidden";
-  //jsPsych.setProgressBar(0);
+  // document.getElementById("jspsych-progressbar-container").style.visibility = "hidden";
 }
 }
 
@@ -128,7 +127,7 @@ var main_exp_instructions = {
       <p class="instructions-text">In this experiment, you will be <strong>switched between playing Game A and Game B</strong>, \
       with some rest periods in between (during which you will play the rest game).
       <br><br>You will start off by playing Game A. At certain points of the experiment, you will be notified that you are 
-      about to enter a <strong>rest period</strong>, and <strong>will be told which game (A or B) will occur after the rest period is over.</strong></p>
+      about to enter a <strong>rest period</strong>, and <strong>will be told which game (A or B) will occur after the rest period is over.</strong><br></p>
       <p class="instructions-text">When you enter the rest period, you will be able to remain in rest and play the rest game for up \
       to 30 seconds. <b>Once you're ready to leave rest, you can press the "End Rest" button in the top right corner</b>. \
       You should stay in the rest game for as long as you need or want, but be aware that staying longer will be costly.</p>
