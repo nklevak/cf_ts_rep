@@ -24,7 +24,7 @@ var welcome_practice_instructions = {
     `<div class="instructions-container">
       <p class="instructions-text">In this experiment, you will be playing two games&mdash;<b>Game A</b> and <b>Game B</b>. <br>\
       You will also be given rest breaks, during which you will do the <b>Rest Game</b>.</p>
-      <p class="instructions-text">You will be paid 12 dollars per hour, plus a bonus of up to 3 dollars, and \
+      <p class="instructions-text">You will be paid 12 dollars per hour, plus a bonus of up to 2.50 dollars, and \
       regardless of your choices during this experiment, it will be approximately 56 minutes. </p>
       <p class="instructions-text">Before we begin, let's do some practice of the games. We will begin with <b>Game A</b></p>
     </div>`
@@ -68,7 +68,7 @@ rest_practice = [
   <p class="instructions-text">You have completed the practice for the two main games, Game A and Game B!</p>
   <p class="instructions-text">Now, you will practice the <strong>rest game</strong>, which will be shown to you during rest breaks.</p>
   <p class="instructions-text">Unlike Game A and Game B, do not worry about getting everything correct in the Rest Game. \
-  As long as make an attempt to correctly answer most of the trials, you will get credit.</p>
+  As long as you make an attempt to correctly answer most of the trials, you will get credit.</p>
 </div>`,
 `<div class="instructions-container">
   <p class="instructions-text">In this game, you will see two shapes with numbers underneath them. \
@@ -121,7 +121,7 @@ var main_exp_instructions = {
       <p class="instructions-text">In this experiment, you will be <strong>switched between playing Game A and Game B</strong>, \
       with some rest periods in between (during which you will play the rest game).
       <br><br>You will start off by playing Game A. At certain points of the experiment, you will be notified that you are 
-      about to enter a <strong>rest period</strong>, and <strong>will be told which game (A or B) will occur after the rest period is over.</strong><br></p>
+      about to enter a <strong>rest period</strong>, and <strong>you will be told which game (A or B) will occur after the rest period is over.</strong><br></p>
       <p class="instructions-text">When you enter the rest period, you will be able to remain in rest and play the rest game for up \
       to 30 seconds. <b>Once you're ready to leave rest, you can press the "End Rest" button in the top right corner</b>. \
       You should stay in the rest game for as long as you need or want, but be aware that staying longer will be costly.</p>
@@ -129,7 +129,7 @@ var main_exp_instructions = {
     `<div class="instructions-container">
       <h1 class="instructions-heading">The point system and bonus</h1>
   
-      <p class="instructions-test">Please try your best on the main games; as long as it is clear you tried on every trial, you will get an base bonus of at least 0.50 dollars.</p>
+      <p class="instructions-test">Please try your best on the main games; as long as it is clear you tried on every trial, you will get a base bonus of at least 0.50 dollars.</p>
       <p class="instructions-text">You can gain an extra bonus of 2 additional dollars (bringing the total up to 2.50). \
       To do so: you will get an endowment of <b>600 points</b> to begin with, which you can use as currency in this experiment.<br>\
       These points are valuable, and <b>they represent your ability to rest for longer during the experiment.</b><br>\
