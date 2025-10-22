@@ -1,0 +1,134 @@
+---
+title: "pre-registration-doc"
+output: html_document
+date: "2025-10-21"
+---
+## Introduction
+
+This is the pre-registration for an experiment based off of our previous pilot study ("the Effect of Task Switching on Cognitive Fatigue") which was presented at the Computational Cognitive Neuroscience Conference in 2025.
+
+In this previous experiment, as described in the aforementioned CCN extended abstract, "we developed a novel paradigm using an objective measure of cognitive fatigue-—participants’ willingness to spend money on rest following periods of cognitive exertion. Across the experiment, epochs characterized by poor performance (“low-efficacy”) were followed by significantly increased cognitive fatigue. This effect was potentiated when subjects anticipated an upcoming task switch. Crucially, the impact of undergoing a task switch on subsequent performance also depended on prior task efficacy: switching into a new task improved performance after low-efficacy epochs but impaired it after high-efficacy epochs. These results use an objective measure to replicate prior findings that cognitive fatigue worsens after low-efficacy tasks. Further, they demonstrate an intriguing role for task-switching in cognitive fatigue. Task-switching is costly to performance only during high-efficacy periods; in low-efficacy periods, undergoing a switch enhances performance. Given the relationship between performance and cognitive fatigue, this also suggests that switching into a new task while in a low-efficacy state improves fatigue."
+
+In this new experiment, we will use the same methodology as we did before with minor changes--primarily with stimuli presentation length--to answer similar questions. Our questions of interest are:
+Q1) Is there a post-error increase in fatigue? i.e. is accuracy a significant negative estimator for subsequent rest time when accounting for subject differences.
+Q2) When does task switching improve performance, if ever? i.e. how does performance differ in the epoch following a switch vs a non-switch.
+Q3) Is task switching acted upon as tiring? i.e. will rest time when cued that the next epoch will be a switch block be longer than when cued the next epoch will be a stay block
+Q4) [exploratory/new] Is there a clear relationship between rest time in a given SPR and following performance?
+
+Through running this study, we hope to better understand and clarify the role that task switching plays in cognitive fatigue and performance. Additionally, we hope to validate self-paced rests as a novel method of measuring fatigue.
+
+**task repository link:** <https://github.com/nklevak/cf_ts_rep>
+
+**link to online task:** <https://nklevak.github.io/cf_ts_rep/>
+
+**CCN abstract link:** <https://2025.ccneuro.org/abstract_pdf/Klevak_2025_The_effect_task_switching_cognitive_fatigue.pdf>
+
+**link to OSF preregistration:** <>
+
+## Methods
+
+### Power Analysis
+
+Using the simr package in R, and an alpha of 0.05, we estimated the sample size needed for a power of at least 80% per hypothesis.
+
+1) previous effect size for the post-error fatigue increase finding was small (std beta of 0.06). By creating a power curve with the same glmer we used to achieve this result previously, we got a sample size of 150.
+
+2) For the interaction effect of task switching x prior performance on future performance, we used an effect size of 0.3 to be conservative (although our effect size in the pilot study was larger). Using this, and a slightly simplified glmer binomial model than we used to get our result in the extended abstract, we got that a sample size of 5 or larger should be sufficient. This result may have been due to the complexity of our glmer model--so we based our sample size estimates on the other two hypotheses.
+
+3) previous effect size for the effect of the switch cue on rest length was small (std. beta of 0.08). By creating a power curve with the same glmer we used to achieve this result previously, we got a sample size of 100.
+
+We took this and resources into account when we decided to use a sample size of 100.
+
+### Planned Sample
+
+The planned sample size is 100 participants on Prolific. They will be sampled on Prolific continuously until 100 participants qualify for the study post-exclusion. The sampling demographics will be the demographics of Prolific, but it is unclear what exactly they will be. 
+
+The pre-selection criteria are:
+- Participants have to be fluent in English.
+- Participants need to state that they have no issues seeing colors.
+- Participants have to have an approval rate of 99-100
+
+### Task Design	
+
+With some changes, this methods description is taken from the CCN extended abstract linked above: 
+
+We developed a novel paradigm to be conducted online on Prolific for approximately 55 minutes. After an instructional period, participants are taken through a training phase of three "games": a spatial recall game (memorizing 4 squares flashing on a 4x4 grid), a digit span game (memorizing 4 digits flashing on screen), and a low effort rest game (clicking the digit corresponding to a given shape, with no memory required). These training phases were 4 trials per game.
+
+The spatial recall and digit span games are referred to as Game A and Game B (counterbalanced across participants). In the main phase after training, participants are shown 10 blocks of the games in the order: ABABBABAAB. Each block consists of 3 epochs (10 trials of a given task per epoch) of the same game, and every epoch was followed by a self-paced rest (SPR) period (described below in more detail). Here, each SPR period is preceded by a cue that signals whether, in the following epoch, participants would be playing the same game (a task stay) or a different game (a task switch).
+
+Importantly, this experiment incorporates the aforementioned SPR periods, each consisting of 20 1.525 second trials of the low effort rest game. Participants could terminate SPR periods at their discretion. Following the conclusion of the 10 blocks, participants finish the rest trials they had skipped to equalize the length of the experiment. Crucially, the decision to remain in rest is costly. Participants are told they will lose points from an initial 600 point endowment for every trial they remained in rest, and that the total points remaining after task completion would be used to calculate a monetary bonus ($2). Thus, in contrast to prior work which has relied primarily on subjective (self-reported) fatigue, rest duration–-indexing participants' willingness to incur a cost to continue resting—-is used here as an objective measure of cognitive fatigue.
+
+Here are more details about the timings for the spatial recall task and the digit span task:
+digit span:
+    Sequence Presentation: 1.9 seconds (4 digits × (275ms display + 200ms gap between digits))
+    Response Window: 4.2 seconds maximum
+    total per trial: 6.1 seconds max
+spatial recall:
+    initial stimulus (empty grid): 100 ms
+    Sequence Presentation: 2.06 seconds (4 squares × (315ms display + 200ms gap between squares))
+    Response Window: 4.2 seconds maximum
+    total per trial: 6.36 seconds max
+self paced rest:
+    total per trial: 1.525 seconds (1350ms display + 175ms clear screen)
+    
+*In the training phase, each trial of each game (and the rest task) was followed by a 1s feedback period.*
+
+
+### Analysis
+
+## exclusion criteria
+For data exclusion, we will exclude participants:
+1. with an overall average accuracy below 40% on both tasks (digit span and spatial recall) as this signifies a lack of attention/trying
+2. with an overall average accuracy above 95% on both tasks as this would prevent us from seeing error-effects
+3. with incomplete data
+4. who complete the experiment too quickly (as this would suggest that they may be doing the experiment with help from an AI agent)
+- Prolific has a feature that auto-rejects responses they believe are not humanly possible due to speed
+- Looking at digit span and spatial recall separately and only for correct trials: we will exclude participants whose median reaction times were below the 5th percentile of median reaction time of correct trials in our previous 84 subject experiment AND whose standard deviation of reaction time was below the 5th percentile of standard deviation of reaction time of correct trials in our previous 84 subject experiment. Here are the values we calculated:
+    - digit_span | 5th percentile median reaction time of correct trials = 1826.527	ms | 5th percentile standard dev of reaction time of
+    correct trials = 265.7233	ms
+    - spatial_recall | 5th percentile median reaction time of correct trials = 1807.055	ms | 5th percentile standard dev of reaction time
+    of correct trials = 239.9924	ms
+
+## analysis plan
+
+To answer our three main questions, we will use generalized linear mixed effect models (incorporating random slopes to account for between-subject variability) and use significance testing. We will operationalize fatigue as the amount of rest trials participants use per rest block, and will primarily operationalize performance as participant's accuracy per epoch of a task. 
+
+H1) We hypothesize that there will be a consistent post-error increase in fatigue, where participants will rest for longer after lower-performance epochs.
+- example model: glmer.nb(num_rest_in_block ~ previous_avg_block_accuracy*cue_type + group_num + game_type + (1|subj_id),
+                          data = model_data) (here, we would look at the Beta of previous_avg_block_accuracy)
+                          
+H2) We hypothesize that task switching will improve performance when participants were performing more poorly in the prior epoch, while it will hurt performance when they were performing relatively well in the previous epoch.
+- example model: glmer(cbind(next_block_successes, next_block_failures) ~ previous_avg_block_accuracy*cue_type + game_type + group_num + (1 + game_type|subj_id),
+               family = binomial,
+               data = model_data_q2) (here, we would look at the Beta of previous_avg_block_accuracy:cue_type)
+               
+H3) We hypothesize that the effect of switch cues on rest time will depend on prior performance (participants will rest for longer when told they are about to switch)
+- example model: glmer.nb(num_rest_in_block ~ previous_avg_block_accuracy*cue_type + group_num + game_type + (1|subj_id),
+                          data = model_data) (here, we would look at the Beta of previous_avg_block_accuracy:cue_type)
+
+H4) [exploratory] We hypothesize that rest time is rejuvenating in the short term (it increases the likelihood of becoming less fatigued).
+
+**Core model specifications (fixed):**
+- H1: Negative binomial model with num_rest_in_block as DV, previous_avg_block_accuracy as key predictor
+- H2: Binomial model testing previous_avg_block_accuracy × cue_type interaction on performance (DV)
+- H3: Model testing effect of previous_avg_block_accuracy x cue_type on rest duration (DV)
+
+**Flexible elements:**
+- Specific random effects structure may be adjusted based on model convergence
+- Additional covariates may be added if necessary for model fit
+- Alternative link functions may be used if distributional assumptions are violated
+
+**Any deviations from these planned models will be documented and justified in the final paper.**
+
+## Statistical Approach
+- Alpha level: 0.05 for confirmatory hypotheses (H1-H3)
+- H4 is exploratory and will be interpreted accordingly
+
+<!-- ### Methods Addendum (Post Data Collection) -->
+
+<!-- #### Actual Sample -->
+
+
+<!-- #### Differences from pre-data collection methods plan -->
+
+<!-- ## Results -->
