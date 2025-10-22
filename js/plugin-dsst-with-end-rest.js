@@ -80,7 +80,7 @@ var dsstWithEndRestPlugin = (function (jspsych) {
       // Function to actually finish the trial after blank screen
       const finishAfterBlank = () => {
         display_element.innerHTML = '';
-        // If no response was made or response was too late, mark as timed out
+        // Centralized timeout check: no response OR response too late
         if (!response_info.response || (response_info.rt && response_info.rt >= trial.trial_duration)) {
           response_info.timed_out = 1;
         }
@@ -102,10 +102,6 @@ var dsstWithEndRestPlugin = (function (jspsych) {
       let trial_timer = this.jsPsych.pluginAPI.setTimeout(() => {
         // If no one ended rest and we haven't ended yet:
         if (!end_rest_early) {
-          // If no response was made, mark timed_out
-          if (!response_recorded) {
-            response_info.timed_out = 1;
-          }
           endTrialWithBlank();
         }
       }, trial.trial_duration);
@@ -116,10 +112,6 @@ var dsstWithEndRestPlugin = (function (jspsych) {
           response_recorded = true;
           response_info.rt = info.rt;
           response_info.response = info.key;
-          // Check if response was too late
-          if (info.rt >= trial.trial_duration) {
-            response_info.timed_out = 1;
-          }
         }
       };
 

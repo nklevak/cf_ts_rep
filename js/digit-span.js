@@ -32,7 +32,6 @@ const keypadHTML = `
 // Global variables to store response
 let currentResponse = [];
 let currentTrial = null;
-let startTime = null;
 
 // Handler functions
 function handleDigit(digit) {
@@ -52,7 +51,8 @@ function handleSubmit() {
         // Store response before ending trial
         if (currentTrial) {
             currentTrial.data.response = currentResponse.slice();
-            currentTrial.data.rt = performance.now() - startTime;
+            // Remove manual RT calculation - let jsPsych handle it
+            // currentTrial.data.rt = performance.now() - startTime;
         }
         // Find and click the hidden jsPsych button
         document.querySelector('#jspsych-html-button-response-button-0').click();
@@ -103,7 +103,6 @@ function createResponsePhase(sequence, is_practice) {
         on_start: function(trial) {
             currentResponse = [];
             currentTrial = trial;
-            startTime = performance.now();
         },
         on_finish: function(data) {
             data.game_type = "digit_span"
@@ -121,12 +120,13 @@ function createResponsePhase(sequence, is_practice) {
                 data.is_correct = 0;
                 data.timed_out = 1;
                 data.rt = response_time_max; // timeout duration
+            } else {
+                // Only check correctness if there was a response
+                data.is_correct = JSON.stringify(data.response) === JSON.stringify(data.sequence);
             }
-            data.is_correct = JSON.stringify(data.response) === JSON.stringify(data.sequence);
             console.log(JSON.stringify(data.response) === JSON.stringify(data.sequence));
 
             currentTrial = null;
-            startTime = null;
         }
     };
 }

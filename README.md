@@ -19,7 +19,7 @@ Current ordering: ABABBABAAB (5 As and 5 Bs)
 - **Main Task Structure**: ABABBABAAB pattern (10 blocks, 3 epochs per block, 30 epochs in total)
 - **Trials per Epoch**: 10 trials (both games)
 - **SPR Periods**: Up to 20 trials (30 seconds) between epochs
-- **Bonus Structure**: $1 base + up to $2 additional based on rest usage
+- **Bonus Structure**: $0.50 base + up to $2 additional based on rest usage
 
 ### Task Parameters
 - Digits to memorize in Digit Span: 4
@@ -87,7 +87,7 @@ Current ordering: ABABBABAAB (5 As and 5 Bs)
 (in case instructions/survey take a long time, round up to 56 minutes)
 
 ## Bonus Structure
-- Base Bonus: $1
+- Base Bonus: $0.50
 - Additional Bonus: Up to $2
   - Calculated as: (unused rest trials / 600) × $2
 - Endowment: 600 points (1 rest trial used = -1 points)

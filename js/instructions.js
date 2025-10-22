@@ -129,8 +129,8 @@ var main_exp_instructions = {
     `<div class="instructions-container">
       <h1 class="instructions-heading">The point system and bonus</h1>
   
-      <p class="instructions-test">Please try your best on the main games; as long as it is clear you tried on every trial, you will get an base bonus of at least 1 dollar.</p>
-      <p class="instructions-text">You can gain an extra bonus of 2 additional dollars (bringing the total up to 3). \
+      <p class="instructions-test">Please try your best on the main games; as long as it is clear you tried on every trial, you will get an base bonus of at least 0.50 dollars.</p>
+      <p class="instructions-text">You can gain an extra bonus of 2 additional dollars (bringing the total up to 2.50). \
       To do so: you will get an endowment of <b>600 points</b> to begin with, which you can use as currency in this experiment.<br>\
       These points are valuable, and <b>they represent your ability to rest for longer during the experiment.</b><br>\
       During the rest game, <b>every rest trial you use will use 1 point from your endowment</b> and at the end of the game, \
